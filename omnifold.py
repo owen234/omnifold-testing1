@@ -55,7 +55,7 @@ def omnifold(theta0,theta_unknown_S,iterations,model,verbose=0):
         # weights reweighted Sim. --> Data
 
         if (verbose>0):
-            print("STEP 1\n")
+            print("   -- ITERATION %d  STEP 1\n" % (i+1) )
             pass
             
         weights_1 = np.concatenate((weights_push, np.ones(len(theta_unknown_S))))
@@ -84,7 +84,7 @@ def omnifold(theta0,theta_unknown_S,iterations,model,verbose=0):
         # weights Gen. --> reweighted Gen.
 
         if (verbose>0):
-            print("\nSTEP 2\n")
+            print("\n   -- ITERATION %d  STEP 2\n" % (i+1) )
             pass
 
         weights_2 = np.concatenate((np.ones(len(theta0_G)), weights_pull))
