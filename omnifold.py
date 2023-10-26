@@ -34,12 +34,28 @@ def omnifold(theta0,theta_unknown_S,iterations,model,verbose=0):
     
     labels0 = np.zeros(len(theta0))
     labels_unknown = np.ones(len(theta_unknown_S))
+    labels_unknown_step2 = np.ones(len(theta0_G))
     
     xvals_1 = np.concatenate((theta0_S, theta_unknown_S))
     yvals_1 = np.concatenate((labels0, labels_unknown))
 
     xvals_2 = np.concatenate((theta0_G, theta0_G))
-    yvals_2 = np.concatenate((labels0, labels_unknown))
+    yvals_2 = np.concatenate((labels0, labels_unknown_step2))
+
+    if verbose :
+        print("\n\n")
+        print("  shape of theta0_S : %s" % str(np.shape(theta0_S)) ) ;
+        print("  shape of theta_unknown_S : %s" % str(np.shape(theta_unknown_S)) ) ;
+        print("  shape of xvals_1 :  %s" % str(np.shape( xvals_1 )) ) ;
+        print("\n\n")
+        print("  shape of labels0 : %s" % str(np.shape(labels0)) ) ;
+        print("  shape of labels_unknown : %s" % str(np.shape(labels_unknown)) ) ;
+        print("  shape of yvals_1 :  %s" % str(np.shape( yvals_1 )) ) ;
+        print("\n\n")
+        print("  shape of theta0_G : %s" % str(np.shape(theta0_G)) ) ;
+        print("  shape of xvals_2 :  %s" % str(np.shape( xvals_2 )) ) ;
+        print("  shape of yvals_2 :  %s" % str(np.shape( yvals_2 )) ) ;
+        print("\n\n")
 
     # initial iterative weights are ones
     weights_pull = np.ones(len(theta0_S))
