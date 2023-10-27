@@ -93,8 +93,13 @@ def omnifold(theta0,theta_unknown_S,iterations,model,verbose=0):
                   validation_data=(X_test_1, Y_test_1),
                   verbose=verbose)
 
+        step1_output_weights = reweight(theta0_S,model)
+
         weights_pull = weights_push * reweight(theta0_S,model)
-        weights[i, :1, :] = weights_pull
+
+        #######weights[i, :1, :] = weights_pull
+        weights[i, :1, :] = step1_output_weights
+
 
         # STEP 2: classify Gen. to reweighted Gen. (which is reweighted by weights_pull)
         # weights Gen. --> reweighted Gen.
