@@ -19,6 +19,13 @@ void mvn2d_test1() {
 
     RooDataSet* data = rmvn.generate( RooArgSet(x,y), 10000 ) ;
 
+    data->Print("V") ;
+    data->get(0) -> Print("V") ;
+    data->get(1) -> Print("V") ;
+    data->get(2) -> Print("V") ;
+    data->get(3) -> Print("V") ;
+    data->get(4) -> Print("V") ;
+
     RooFitResult* rfr = rmvn.fitTo( *data, Save(true) ) ;
 
     mean_x.Print() ;

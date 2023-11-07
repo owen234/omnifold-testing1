@@ -6,6 +6,8 @@
 #include "RooHelpers.h"
 #include "RooBatchCompute.h"
 
+bool edebug(true) ;
+int  evalcount(0) ;
 
 ClassImp(RooMvn2d);
 
@@ -45,10 +47,21 @@ RooMvn2d::RooMvn2d(const RooMvn2d& other, const char* name) :
 
 Double_t RooMvn2d::evaluate() const
 {
+//if ( edebug ) {
+//   double xv = x ;
+//   double yv = y ;
+//   printf("  %5d : x = %f  y = %f\n", evalcount, xv, yv ) ;
+//   evalcount++ ;
+//   if ( evalcount > 10 ) edebug = false ;
+//}
   double det = sigma2_x * sigma2_y - cov_xy * cov_xy ;
   if ( det <= 0 ) det = 1. ; // what else should I do?
   double norm = 1./((2*3.14159265)*sqrt(det)) ;
-  return norm * std::exp( -0.5 * (1./det)*(sigma2_y*(x-mean_x)*(x-mean_x) + sigma2_x*(y-mean_y)*(y-mean_y) - 2.*cov_xy*(x-mean_x)*(y-mean_y) ) ) ;
+  double rv = norm * std::exp( -0.5 * (1./det)*(sigma2_y*(x-mean_x)*(x-mean_x) + sigma2_x*(y-mean_y)*(y-mean_y) - 2.*cov_xy*(x-mean_x)*(y-mean_y) ) ) ;
+   /////////double xv = x ;
+   /////////double yv = y ;
+   /////////printf("    x = %8.4f  y = %8.4f  rv = %10.6f\n", xv, yv, rv ) ;
+  return rv ;
 }
 
 
