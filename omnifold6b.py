@@ -58,7 +58,7 @@ def omnifold6b(theta0,theta_unknown_S,iterations,model,verbose=0,
 
     if verbose :
         print("\n\n")
-        print("  ======== omnifold6\n\n")
+        print("  ======== omnifold6b\n\n")
         print("  shape of theta0_S : %s" % str(np.shape(theta0_S)) ) ;
         print("  shape of theta_unknown_S : %s" % str(np.shape(theta_unknown_S)) ) ;
         print("  shape of xvals_1 :  %s" % str(np.shape( xvals_1 )) ) ;
