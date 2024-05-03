@@ -1,8 +1,11 @@
 ## Sandbox for exploring OmniFold
 
-Various tests.
+
 
 Some things were taken or adapted from Ben Nachman's OmniFold tutorial.  https://github.com/hep-lbdl/OmniFold
+
+This is a collection of code for studying unbinned maximum likelihood fits that are performed on the output of OmniFold, which produces weighted events, where the event weights have non-zero correlations.
+
 
 Here's a few descriptions of things that are in here.
 
@@ -57,4 +60,4 @@ Less important stuff
 
 
 
-- 
+
