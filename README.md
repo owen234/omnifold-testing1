@@ -22,12 +22,26 @@ Most important stuff
 
 - **plot-bootstrap6b.ipynb** :  Make plots of event weight correlations as a function of distance in feature space.  Uses output of analyze-bootstrap6b.ipynb.
 
+- **multiplot-bootstrap6.ipynb** :  Plots of event weight correlations for three different configurations.
+
 - **RooMultiVarGaussian2e.cxx,h** :  RooFit class for a multivariate Gaussian PDF.  Used for fitting bootstrap samples.  Comple the cxx file before running the Jupyter Notebook by starting root and then typing `.L RooMultiVarGaussian2e.cxx++`
 
-- **bootstrap-nd-fitting6.ipynb** :  Performs unbinned maximum likelihood fits of bootstrap samples.  Uses RooMultiVarGaussian2e.cxx.
+- **bootstrap-nd-fitting6.ipynb** :  Performs unbinned maximum likelihood fits of bootstrap samples.  Uses RooMultiVarGaussian2e.cxx.  Note that you need to run inspect-bootstraps.ipynb before running this in order to first calculate the mean and RMS of the model parameters, which are used to set the bounds on the fit parameters.
 
 - **inspect-bootstraps.ipynb** :  Inspects the bootstrap samples produced by bootstrap_toy_study*.ipynb.  Does simple calculations of model parameters from the sample.  Compares these to the results of unbinned maximum likelihood fits of the samples from bootstrap-nd-fitting6.ipynb, if they are available.
 
+
+Versions that replace the NN in Omnifold with a simple pdf estimation from the local point density.
+
+- **simple_pdf2b.py** :  Similar to omnifold6b.py.
+
+- **simple_pdf_study6b-2d-7b.ipynb** :  Similar to toy_study6b-2d-7b.ipynb.
+
+- **bootstrap_simple_pdf_study6b-2d-2a-v1b.ipynb** :  Similar to bootstrap_toy_study6b-2d.ipynb.
+
+- **compare-simple-pdf-vs-nn-1a.ipynb** :  Plots comparing the simple PDF with the NN.
+
+  
 
 
 
