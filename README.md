@@ -4,7 +4,15 @@
 
 Some things were taken or adapted from Ben Nachman's OmniFold tutorial.  https://github.com/hep-lbdl/OmniFold
 
-This is a collection of code for studying unbinned maximum likelihood fits that are performed on the output of OmniFold, which produces weighted events, where the event weights have non-zero correlations.
+This is a collection of code for studying unbinned maximum likelihood fits that are performed on the output of OmniFold, which produces weighted events, where the event weights have non-zero correlations.  The analysis is broken up into steps, where the workflow may look something like this to do a complete study:
+
+- toy_study*.ipynb :  Check the basic Omnifold setup.
+- bootstrap_toy_study*.ipynb :  Run bootstraps for that setup.
+- inspect-bootstraps.ipynb :  Look at the output of the bootstraps.  May be run while the bootstrap_toy_study is still in progress.
+- bootstrap-nd-fitting*.ipynb :  Run unbinned maximum likelihood fits on the Omnifold output for the bootstraps
+- inspect-bootstraps.ipynb :  Look at the bootstraps including the fits
+- analyze-bootstrap*.ipynb :  Look at the correlations between the event weights in the bootstraps.
+- plot-bootstrap*.ipynb :  Make plots of the event weight correlations.
 
 
 Here's a few descriptions of things that are in here.
